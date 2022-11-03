@@ -1,0 +1,95 @@
+<section class="inner-banner">
+    <div class="container text-center">
+        <h3>Blog Page</h3>
+        <div class="breadcumb">
+            <a href="#">Home</a>
+            <!--
+            --><span class="sep">-</span>
+            <!--
+            --><span class="page-name">Blog Page</span>
+        </div><!-- /.breadcumb -->
+    </div><!-- /.container -->
+</section><!-- /.inner-banner -->
+
+<section class="blog-page blog-style-one sec-pad">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+
+                <% posts.forEach((post)=> { %>
+                    <div class="single-blog-style-one">
+                        <div class="img-box">
+                            <% post.image = `data:${post.imageType};charset=utf-8;base64,${post.image.toString('base64')}`  %>
+                            <img src="<%=post.image%>" alt="Awesome Image">
+                            <a href="/blog-details/<%=post.id%>" class="read-more">Read Post</a>
+                        </div><!-- /.img-box -->
+                        <div class="text-box">
+                            <a href="/blog-details/<%=post.id%>">
+                                <h3>
+                                    <%= post.title %>
+                                </h3>
+                            </a>
+                            <p>
+                                <%=post.content%>
+                            </p>
+                            <div class="meta-info">
+                                <a href="#"><i class="far fa-calendar"></i>
+                                    <%=post.createdAt.toDateString() %>
+                                </a>
+                                <a href="#"><i class="far fa-user"></i>
+                                    <%=post.username%>
+                                </a>
+                            </div><!-- /.meta-info -->
+                        </div><!-- /.text-box -->
+                    </div>
+                    <% }) %>
+
+
+                    
+
+
+                        <!-- <div class="blog-post-pagination">
+                            <a href="#"><i class="fa fa-angle-left"></i></a>
+
+                            <a href="#" class="active">1</a>
+
+                            <a href="#">2</a>
+
+                            <a href="#">3</a>
+
+                            <a href="#">4</a>
+
+                            <a href="#"><i class="fa fa-angle-right"></i></a>
+                        </div> -->
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="sidebar sidebar-right">
+                    <div class="single-sidebar search-widget">
+                        <form action="#" class="search-form">
+                            <input type="text" placeholder="Search..">
+                            <button class="fa fa-search" type="submit"></button>
+                        </form><!-- /.search-form -->
+                    </div><!-- /.single-sidebar -->
+                 
+                    
+
+
+                     <!-- /.archive-lists -->
+                     
+                   
+
+
+
+
+
+                   
+                </div><!-- /.sidebar sidebar-right -->
+            </div><!-- /.col-md-4 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+
+    <script src="/js/lib/jquery-3.4.1.min.js"></script>
+    <script src="/blog.js"></script>
+</section><!-- /.blog-page sec-pad -->

@@ -1,0 +1,113 @@
+<section class="inner-banner">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1 class="page-name">Create New Post</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="service-style-one sec-pad service-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <form action="/posts/store" method="POST" encType="multipart/form-data">
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Username</label>
+                            <input type="text" name="username" placeholder="Username" class="form-control" required>
+                        </div>
+                        <div class="create-blog-error"></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Title</label>
+                            <input type="text" name="title" placeholder="Title" class="form-control" required>
+                        </div>
+                        <div class="create-blog-error"></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Description</label>
+                            <input type="text" name="description" placeholder="Description" class="form-control" required>
+                        </div>
+                        <div class="create-blog-error"></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Content</label>
+                            <textarea name="content" placeholder="Content ..." cols="30" rows="10"
+                                class="form-control" required></textarea>
+                        </div>
+                        <div class="create-blog-error"></div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="file" name="image"  class="filepond" accept="image/png, image/jpeg, image/gif">
+                    </div>
+                    <div class="form-group my-4 text-center">
+                        <button class="rqa-btn">Create Post</button>
+                    </div>
+                    <div class="image-error "></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const form = document.querySelector('form');
+    const imageError = document.querySelector('.image-error');
+    const createBlogError = document.querySelector('.create-blog-error');
+    
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            imageError.textContent="";
+
+
+            const image = form.image.value;
+            const title = form.title.value;
+            const description =form.description.value;
+            const username =form.username.value;
+            const content =form.content.value;
+
+            if (!image) {
+                console.log('there is no image');
+                // document.querySelector('button').disabled;
+                imageError.textContent="select an image";
+                form.onclose
+            }
+
+            if(!title){
+              createBlogError.textContent="required";
+              form.onclose
+              
+            }
+
+            if(!description){
+                createBlogError.textContent="required" ;
+                form.onclose
+            }
+
+            if(!username){
+                createBlogError.textContent="required" ;
+                form.onclose
+            }
+
+            if(!content){
+                createBlogError.textContent="required" ;
+                form.onclose
+            }
+
+            form.submit();
+
+
+        });
+
+
+
+</script>

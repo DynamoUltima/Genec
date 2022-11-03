@@ -1,0 +1,20 @@
+<div class="single-sidebar archive-widget">
+    <div class="title">
+        <h3>Archive</h3>
+    </div><!-- /.title -->
+    <% blogInfo.forEach((info)=> { %>
+    <ul class="category-lists">
+        <li id="archive-date">
+            <a href="/blog-archives/<%=info._id%>"><i class="far fa-bookmark"></i> <%=parseInt(info._id)%> <span class="count">(<%=info.dateCounts%>)</span></a>
+        </li>
+        <!-- <li>
+            <a href="#"><i class="far fa-bookmark"></i> July 2018 <span class="count">(8)</span></a>
+        </li>
+        <li><a href="#"><i class="far fa-bookmark"></i> Sep 2017 <span class="count">(10)</span></a>
+        </li>
+        <li><a href="#"><i class="far fa-bookmark"></i> Dec 2017 <span class="count">(5)</span></a>
+        </li> -->
+    </ul>
+    <!-- /.archive-lists -->
+    <% }) %>
+</div>

@@ -1,0 +1,91 @@
+
+<section class="inner-banner">
+    <div class="container text-center">
+        <h3>Blog Details Page</h3>
+        <div class="breadcumb">
+            <a href="#">Home</a><!--
+            --><span class="sep">-</span><!--
+            --><span class="page-name">Blog Details Page</span>
+        </div><!-- /.breadcumb -->
+    </div><!-- /.container -->
+</section><!-- /.inner-banner -->
+
+
+<section class="blog-page blog-style-one sec-pad">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="single-blog-style-one single-blog-page-content">
+                    <div class="img-box">
+                        <% post.image = `data:${post.imageType};charset=utf-8;base64,${post.image.toString('base64')}`  %>
+                        <img src="<%=post.image%>" alt="Awesome Image">
+                    </div><!-- /.img-box -->
+                    <h3><%=post.title%></h3>
+                    <div class="meta-info">
+                        <a href="#"><i class="far fa-calendar"></i><%=post.createdAt.toDateString() %></a>
+                        <a href="#"><i class="far fa-user"></i><%=post.username%></a>
+                    </div><!-- /.meta-info -->
+                    <p><%=post.content%></p>
+                    
+                    
+                    <!-- <div class="share-tag-box clearfix">
+                        <div class="share-box pull-left">
+                            <span>Share:</span>
+                            <a href="#" class="fab fa-facebook-f"></a>
+                            <a href="#" class="fab fa-twitter"></a>
+                            <a href="#" class="fab fa-linkedin-in"></a>
+                        </div>
+                        <div class="tags-box pull-right">
+                            <a href="#">Construction</a>
+                            <a href="#">Business</a>
+                            <a href="#">Consult</a>
+                        </div>
+                    </div> -->
+                    <!-- <div class="title-box">
+                        <h3>About Author</h3>
+                    </div>
+                    <div class="author-box">
+                        <div class="img-box">
+                            <i class="far fa-user"></i>
+                        </div>
+                        <div class="text-box">
+                            <h3><%=post.username%></h3>
+                            <span>Senior Engineer</span>
+                            <p>Fugit quasi sit sint architecto, dolorum, harum est facilis cumque debitis aperiam veniam qui dele niti possimus distinctio quos sapiente minima officiis assum.</p>
+                            <div class="social">
+                                <a href="#" class="fab fa-facebook-f"></a>
+                                <a href="#" class="fab fa-twitter"></a>
+                                <a href="#" class="fab fa-linkedin-in"></a>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="title-box">
+                        <h3>Leave A Comment</h3>
+                    </div>
+                    <div class="comment-form-box">
+                        <form action="inc/sendemail.php" class=" contact-form row">
+                            <div class="col-md-12">
+                                <textarea name="message" placeholder="Write Comments..."></textarea>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" name="fname" placeholder="First Name">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" name="lname" placeholder="Last Name">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" name="email" placeholder="Email Address">
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div> -->
+                </div>
+            </div><!-- /.col-md-8 -->
+            <div class="col-md-4">
+               
+            </div><!-- /.col-md-4 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->    
+</section><!-- /.blog-page sec-pad -->
