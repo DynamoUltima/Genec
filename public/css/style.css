@@ -58,6 +58,17 @@ body {
   font-weight: 300;
 }
 
+.horizontal-list {
+  list-style: none; /* Remove default list bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.horizontal-list li {
+  display: inline-block; /* Display list items horizontally */
+  margin-right: 10px; /* Add some spacing between items */
+}
+
 a:hover,
 a:visited,
 a:focus,
